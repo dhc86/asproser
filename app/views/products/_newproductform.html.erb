@@ -1,0 +1,6 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.input :title, label: "Name of Product" %>
+  <%= f.input :description, label: "Small Description" %>
+  <%= f.input :url, label: "URL - Link to Product" %>
+  <%= f.button :submit %>
+<% end %>
