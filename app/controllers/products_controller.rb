@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def new
    @product = current_user.products.build
+   @categories = Category.all.map {|c| [c.name, c.id]}
   end 
 
   def show
@@ -30,6 +31,7 @@ class ProductsController < ApplicationController
 
   def create 
    @product = current_user.products.build(product_params)
+   @product.category_id = params[:category_id]
    if @product.save
     redirect_to root_path 
   else 

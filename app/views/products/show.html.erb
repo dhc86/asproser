@@ -1,9 +1,11 @@
 <h1> <%= @product.title %> </h1>
 <p> <%= @product.description %></p>
 
-<% if @product.user_id == current_user.id %>
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <% if @product.user_id == current_user.id %>
+
     <%= link_to "Edit", edit_product_path(@product) %>
     <%= link_to "Delete", product_path(@product), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
   <% end %>
+
 <% end %>

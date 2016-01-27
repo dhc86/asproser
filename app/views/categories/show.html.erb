@@ -1,0 +1,11 @@
+<h1>Show page for categories</h1>
+
+<p>here I post products related to this <%= @category.name %> category </p>
+
+<% if user_signed_in? %>
+  <% if @category.user_id == current_user.id %>
+
+    <%= link_to "Edit", edit_category_path(@category) %>
+    <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
+  <% end %>
+<% end %>
