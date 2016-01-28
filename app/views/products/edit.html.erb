@@ -1,5 +1,11 @@
 <h1>Edit your Product</h1>
 
-<%= render 'newproductform' %>
+<%= simple_form_for @product do |f| %>
+  <%= f.select :category_id, @categories  %> 
+  <%= f.input :title, label: "Name of Product" %>
+  <%= f.input :description, label: "Small Description" %>
+  <%= f.input :url, label: "URL - Link to Product" %>
+  <%= f.button :submit %>
+<% end %>
 
 <%= link_to "Main page", products_path %>

@@ -19,6 +19,8 @@ class CategoriesController < ApplicationController
   end  
 
   def show
+    @products = Product.all.find_all {|c| c.category_id == @category.id}
+    # binding.pry
   end 
 
   def edit 

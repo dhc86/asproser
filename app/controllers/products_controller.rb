@@ -14,9 +14,11 @@ class ProductsController < ApplicationController
   end 
 
   def edit 
+    @categories = Category.all.map {|c| [c.name, c.id]}
   end 
 
   def update
+    @product.category_id = params[:category_id]
     if @product.update(product_params)
       redirect_to root_path
     else 
@@ -41,7 +43,7 @@ class ProductsController < ApplicationController
 
 private 
   def product_params
-    params.require(:product).permit(:title, :description, :url) 
+    params.require(:product).permit(:title, :description, :url, :category_id) 
   end 
 
   def find_product
