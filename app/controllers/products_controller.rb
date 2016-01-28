@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to root_path
+    redirect_to products_path
   end 
 
   def create 
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
 
 private 
   def product_params
-    params.require(:product).permit(:title, :description, :url, :category_id) 
+    params.require(:product).permit(:title, :description, :url, :category_id, :product_image) 
   end 
 
   def find_product

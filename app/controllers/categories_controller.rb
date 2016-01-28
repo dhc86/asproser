@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
  before_action :find_category, only: [:show, :destroy, :update, :edit] 
+  
   def index
     @categories = Category.all
   end 
@@ -27,7 +28,7 @@ class CategoriesController < ApplicationController
   end 
 
   def update
-    if @pcategory.update(category_params)
+    if @category.update(category_params)
       redirect_to categories_path 
     else 
       render 'edit'
@@ -41,7 +42,7 @@ class CategoriesController < ApplicationController
 
 private
   def category_params
-    params.require(:category).permit(:name) 
+    params.require(:category).permit(:name, :category_image) 
   end 
 
   def find_category
