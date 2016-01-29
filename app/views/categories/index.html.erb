@@ -37,28 +37,157 @@
   </a>
 </header>
 
-<h1> Categories General - index - </h1>
-<% if @categories.count == 0 %>
-  <p>There are no Categories to display. Please enter a new category!</p>
 
-<% else %>
+<div class="container">
 
-<% @categories.each do |category|  %>
-  <a href="/categories/<%= category.id %>"><%= image_tag category.category_image.url(:category_index) %></a> 
-  <h2><%= link_to category.name, category_path(category) %></h2>
-  <% end  %>
-<% end %>
-
-<%= link_to "Add Category", new_category_path %>
+`
+    <h1 class="text-center title text-center page-header"> Download free courses! </h1>
+     
 
 
+  
+  <% if @categories.count == 0 %>
+    <p>There are no Categories to display. Please enter a new category!</p>
+    <%= link_to "Add Category", new_category_path %>
+
+  <% else %>
 
 
+  <div class="row">
+    <div class="col-md-6">
+        <img class="img-responsive" src="assets/old.jpg" alt="">
+    </div>
+    <div class="col-md-6">
+        <h2>About Asproser</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+  
+        <h2>Newsletter</h2>
+
+       <p>Subscribe to our weekly Newsletter and stay tuned to the latest free and paid products.</p>
+      
+       <form action="" method="post">
+        <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
+          <input type="text" id="" name="" placeholder="your@email.com">
+          <input type="submit" value="Subscribe Now!" class="btn btn-large" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+<br>
+
+  <div class="row">
+    <div class="col-lg-12">
+        <h1  class="text-center title text-center page-header">Portfolio Categories</h1>
+        <br>
+    </div>
+      <% @categories.each do |category|  %>
+       <div class="col-md-4 col-sm-6">
+        <a href="/categories/<%= category.id %>"><%= image_tag category.category_image.url(:category_index), class: "category" %></a> 
+        <!-- <h2><%= link_to category.name, category_path(category) %></h2> -->
+      </div>
+    <% end  %>
+  <% end %>
+
+  </div>
+</div>
+
+<br>
 
 
+          <div class="recommended_items"><!--recommended_items-->
+            <div>
+            <h2 class="title text-center page-header" >Most Popular Products</h2>
+            </div>
+            <br>
+            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="item active"> 
+                  <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <img src="assets/titanic.png" alt="" />
+                          <h3>Title of the product</h3>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <img src="assets/titanic.png" alt="" />
+                          <h3>Title of the product</h3>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <img src="assets/titanic.png" alt="" />
+                          <h3>Title of the product</h3>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">  
+                  <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <img src="assets/titanic.png" alt="" />
+                          <h3>Title of the product</h3>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <img src="assets/titanic.png" alt="" />
+                          <h3>Title of the product</h3>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <img src="assets/titanic.png" alt="" />
+                          <h3>Title of the product</h3>
+                          <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+                </a>      
+            </div>
+          </div><!--/recommended_items-->
 
-
-
-
-
-
+          <br>
