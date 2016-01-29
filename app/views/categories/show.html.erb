@@ -13,7 +13,12 @@
 
 <p>List of products for this category</p>
 
-<% @products.each do |product|%>
-  <p><%= product.title %></p>
-   <a href="/products/<%= product.id %>"><%= image_tag product.product_image.url(:product_index) %></a> 
+<% if @products.count == 0 %>
+  <p>There are no Products to display. Please enter a new Product!</p>
+
+<% else %>
+  <% @products.each do |product|%>
+    <p><%= product.title %></p>
+     <a href="/products/<%= product.id %>"><%= image_tag product.product_image.url(:product_index) %></a> 
+  <% end %>
 <% end %>
