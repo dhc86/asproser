@@ -1,0 +1,37 @@
+
+
+<div class="container">
+  <h1>List of all the subscribers</h1>
+  
+  <h4>This is a list of all the subscribers you have in your database:</h4>          
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>id in database</th>
+        <th>Name</th>
+        <th>email</th>
+        <th>created at</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% if current_user.id == 1 %>
+      <% n = 0 %>
+      <% @subscribers.each do |subscriber| %>
+        <% n = n + 1 %>
+        <tr>        
+          <td><%= n %></td>
+          <td><%= subscriber.id %></td>
+          <td><%= subscriber.name %></td>
+          <td><%= subscriber.encrypted_email %></td>
+          <td><%= subscriber.created_at %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <td>Please get some subscribers first!</td>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
