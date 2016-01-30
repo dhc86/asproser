@@ -1,11 +1,13 @@
-<h1> <%= @product.title %> </h1>
-<p> <%= @product.description %></p>
-<%= image_tag @product.product_image.url(:product_show) %>
+<div class="container">
+  <h1> <%= @product.title %> </h1>
+  <p> <%= @product.description %></p>
+  <%= image_tag @product.product_image.url(:product_show) %>
 
-<% if user_signed_in? %>
-  <% if @product.user_id == current_user.id %>
-    <%= link_to "Edit", edit_product_path(@product) %>
-    <%= link_to "Delete", product_path(@product), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
+  <% if user_signed_in? %>
+    <% if @product.user_id == current_user.id %>
+      <%= link_to "Edit", edit_product_path(@product) %>
+      <%= link_to "Delete", product_path(@product), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
+    <% end %>
+
   <% end %>
-
-<% end %>
+</div>
