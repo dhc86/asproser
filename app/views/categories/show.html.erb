@@ -1,24 +1,26 @@
-<h1>Show page</h1>
+<div class="container">
+  <h1>Show page</h1>
 
-<h3><%= @category.name %></h3>  
+  <h3><%= @category.name %></h3>  
 
-<% if user_signed_in? %>
-  <% if @category.user_id == current_user.id %>
+  <% if user_signed_in? %>
+    <% if @category.user_id == current_user.id %>
 
-    <%= link_to "Edit", edit_category_path(@category) %>
-    <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
+      <%= link_to "Edit", edit_category_path(@category) %>
+      <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
+    <% end %>
   <% end %>
-<% end %>
 
 
-<p>List of products for this category</p>
+  <p>List of products for this category</p>
 
-<% if @products.count == 0 %>
-  <p>There are no Products to display. Please enter a new Product!</p>
+  <% if @products.count == 0 %>
+    <p>There are no Products to display. Please enter a new Product!</p>
 
-<% else %>
-  <% @products.each do |product|%>
-    <p><%= product.title %></p>
-     <a href="/products/<%= product.id %>"><%= image_tag product.product_image.url(:product_index) %></a> 
+  <% else %>
+    <% @products.each do |product|%>
+      <p><%= product.title %></p>
+       <a href="/products/<%= product.id %>"><%= image_tag product.product_image.url(:product_index) %></a> 
+    <% end %>
   <% end %>
-<% end %>
+</div>
