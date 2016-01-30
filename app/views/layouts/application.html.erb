@@ -34,6 +34,9 @@
         <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?%>
             <li>
+              <%= link_to "Subcribers", subscribers_path %>
+            </li>
+            <li>
               <%= link_to "Add Product", new_product_path %>
             </li>
             <li>
