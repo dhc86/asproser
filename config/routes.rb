@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  get 'freeproducts/gift1'
+  get 'freeproducts/gift2'
+  get 'freeproducts/gift3'
+  get 'freeproducts/home'
+
+ 
+
   resources :products
   resources :categories
   devise_for :users
