@@ -9,6 +9,7 @@ class SubscribersController < ApplicationController
     end 
   end
 
+
   def new
     @subscriber = Subscriber.new
   end 
