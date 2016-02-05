@@ -57,7 +57,7 @@
           <div class="overlay">
             <h2>FREE GIFTS OPTIONS</h2>
             <p> 
-              <a href="/subscribers/new">CLICK HERE</a>
+              <a href="/freeproducts">CLICK HERE</a>
             </p> 
           </div>
         </div>
@@ -104,9 +104,17 @@
         <br>
     </div>
       <% @categories.each do |category|  %>
-       <div class="col-md-4 col-sm-6">
-        <a href="/categories/<%= category.id %>"><%= image_tag category.category_image.url(:category_index), class: "category" %></a> 
-        <!-- <h2><%= link_to category.name, category_path(category) %></h2> -->
+
+       <div class="col-lg-4">
+          <div class="hovereffect">
+              <%= image_tag category.category_image.url(:category_index), class: "img-responsive2"%>
+            <div class="overlay">
+              <h2><%= link_to category.name, category_path(category) %></h2>
+              <p> 
+                <a href="/categories/<%= category.id %>">CLICK HERE</a>
+              </p> 
+            </div>
+          </div>
       </div>
     <% end  %>
   <% end %>
