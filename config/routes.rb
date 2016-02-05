@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'freeproducts/gift1'
-  get 'freeproducts/gift2'
-  get 'freeproducts/gift3'
-  get 'freeproducts/home'
 
- 
-
+  resources :freeproducts
+  resources :gift1
+  resources :gift2
+  resources :gift3
   resources :products
   resources :categories
   devise_for :users
   resources :subscribers
+  resources :thankyou
+
 
   root 'categories#index'
 
