@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Asproser</title>
+  <title>Solo Shoppers</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
         </button>
           <a class="navbar-brand" href="/">
-            <img alt="Brand" src="assets/logo.png" >
+            <img alt="Brand" src="assets/new-logo.png" >
           </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -47,7 +47,7 @@
             </li>
           <% end %>
              <li>
-              <%= link_to "Free Products", new_subscriber_path %>
+              <%= link_to "Free Products", freeproducts_path %>
             </li>
             <li>
               <%= link_to "Products", products_path %>

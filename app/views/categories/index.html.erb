@@ -10,21 +10,21 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="assets/gray.jpg" alt="redcar" class="img-responsive">
+            <img src="assets/presents.jpg" alt="redcar" class="img-responsive">
             <div class="carousel-caption">
-              <h2>Asproser</h2>
+              <h2><%= link_to "Free products!", new_subscriber_path, {:style=>'color:white;'}%></h2>
             </div>
         </div>
         <div class="item">
-            <img src="assets/helmet.jpg" alt="redcar" class="img-responsive"> 
+            <img src="assets/library.jpg" alt="redcar" class="img-responsive"> 
             <div class="carousel-caption">
-              <h2>Free Stuff!</h2>
+              <h2><%= link_to "Find the products you always wanted!", products_path, {:style=>'color:white;'} %></h2>
             </div>
         </div>
         <div class="item">
-            <img src="assets/angry.jpg" alt="redcar" class="img-responsive"> 
+            <img src="assets/shops-street.jpg" alt="redcar" class="img-responsive"> 
             <div class="carousel-caption">
-              <h2>All Products</h2>
+              <h2>Categories</h2>
             </div>
         </div>
     </div>
@@ -45,6 +45,50 @@
     <h1 class="text-center title text-center page-header"> Download free courses! </h1>
      
 
+  <div class="row">
+  <!--   <div class="col-md-6">
+
+      <img class="img-responsive" src="assets/free-gifts.jpg" alt="">
+    </div> -->
+
+      <div class="col-lg-6">
+        <div class="hovereffect">
+        <img class="img-responsive" src="assets/free-gifts.jpg" alt="">
+          <div class="overlay">
+            <h2>FREE GIFTS OPTIONS</h2>
+            <p> 
+              <a href="/freeproducts">CLICK HERE</a>
+            </p> 
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    <div class="col-md-6">
+        <h2>About Solo Shoppers</h2>
+        <p>This is a company that takes care of our customers, always offering the latest products. If you can't find what you are looking for send us an email and we will find it for you. SOmethinmes our connections allow us to give special prices or something free of charge.</p>
+        <p>You can browse through or categories and products to find what you are interested.</p>
+        <p>There are 3 main gifts you can select from, click on the image to see the special products we have to offer free of charge!</p>
+  
+        <h2>Newsletter</h2>
+
+       <p>Subscribe to our weekly Newsletter and stay tuned to the latest free and paid products.</p>
+       
+       
+        <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
+          <input type="submit" value="Subscribe Now without free gift" class="btn btn-large btn-lg" />
+        </div>
+      
+    </div>
+  </div>
+
+<br>
 
   
   <% if @categories.count == 0 %>
@@ -55,40 +99,22 @@
 
 
   <div class="row">
-    <div class="col-md-6">
-        <img class="img-responsive" src="assets/old.jpg" alt="">
-    </div>
-    <div class="col-md-6">
-        <h2>About Asproser</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-  
-        <h2>Newsletter</h2>
-
-       <p>Subscribe to our weekly Newsletter and stay tuned to the latest free and paid products.</p>
-       
-       <form action="" method="post">
-        <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
-          <input type="text" id="" name="" placeholder="your@email.com">
-
-          <input type="submit" value="Subscribe Now!" class="btn btn-large" />
-        </div>
-      </form>
-    </div>
-  </div>
-
-<br>
-
-  <div class="row">
     <div class="col-lg-12">
         <h1  class="text-center title text-center page-header">Portfolio Categories</h1>
         <br>
     </div>
       <% @categories.each do |category|  %>
-       <div class="col-md-4 col-sm-6">
-        <a href="/categories/<%= category.id %>"><%= image_tag category.category_image.url(:category_index), class: "category" %></a> 
-        <!-- <h2><%= link_to category.name, category_path(category) %></h2> -->
+
+       <div class="col-lg-4">
+          <div class="hovereffect">
+              <%= image_tag category.category_image.url(:category_index), class: "img-responsive2"%>
+            <div class="overlay">
+              <h2><%= link_to category.name, category_path(category) %></h2>
+              <p> 
+                <a href="/categories/<%= category.id %>">CLICK HERE</a>
+              </p> 
+            </div>
+          </div>
       </div>
     <% end  %>
   <% end %>
