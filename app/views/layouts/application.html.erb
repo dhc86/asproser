@@ -57,7 +57,7 @@
                 <ul class="dropdown-menu">
                 <% Category.all.each do |category|%>
                     <li>
-                        <%= link_to category.name, categories_path %>
+                        <%= link_to category.name, category_path(category) %>
                     </li>
                 <% end %>
                 </ul>
@@ -85,13 +85,14 @@
 <%= yield %>
 
 
-
+<br>
+<br>
 
      <!-- Footer -->
-<footer>
+<footer class="dark-footer text-center">
     <div class="row">
       <div class="col-lg-12">
-          <p>Copyright &copy; Asproser Website 2016</p>
+          <p>Copyright &copy; Asproser 2016 - SⓄLⓄ SHⓄPPERS</p>
       </div>
     </div>
 </footer>

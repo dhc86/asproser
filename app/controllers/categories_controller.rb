@@ -5,6 +5,7 @@ before_action :authenticate_user!, only: [:destroy, :update, :edit, :new, :creat
 
   def index
     @categories = Category.all
+    @products = Product.all
   end 
 
   def new

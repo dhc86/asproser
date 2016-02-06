@@ -1,15 +1,40 @@
 <div class="container">
-  <h1>Products</h1>
+
+<% if user_signed_in? %>
+    <% if @products.first.user_id == current_user.id %>
+
+      <%= link_to "Add Product", new_product_path %>
+     
+    <% end %>
+  <% end %>
+
+
+
+  <h1 class="text-center title text-center page-header">Products</h1>
   <% if @products.count == 0 %>
     <p>There are no Products to display. Please enter a new Product!</p>
 
   <% else %>
   <% @products.each do |product|  %>
-    <h2><%= link_to product.title, product_path(product) %></h2>
-    <a href="/products/<%= product.id %>"><%= image_tag product.product_image.url(:product_index) %></a> 
-    <p>Product Description:  <%= product.description %></p>
-
+      <div class="col-lg-4">
+          <div class="hovereffect">
+              <%= image_tag product.product_image.url(:product_index), class: "img-responsive2"%>
+            <div class="overlay">
+              <h2><%= product.title %></h2>
+              <p> 
+                <a href="#"%>CLICK HERE</a>
+              </p>
+              <p>
+                <% if user_signed_in? %>
+                  <% if @products.first.user_id == current_user.id %>
+                    <%= link_to "edit Product", edit_product_path(product) %>
+                    <p><%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete?"}%></p>
+                  <% end %>
+                <% end %>
+              </p> 
+            </div>
+          </div>
+      </div>
     <% end  %>
   <% end %>
-  <%= link_to "Add Product", new_product_path %>
 </div>

@@ -1,25 +1,59 @@
 <div class="container">
+
+
   <div class="row">
     <div class="col-lg-12">
-        <h1  class="text-center title text-center page-header">Portfolio gifts</h1>
+      <h1 class="text-center title text-center page-header">Portfolio gifts</h1>
         <br>
     </div>
       
-       <div class="col-md-4 col-sm-6">
-       <%= link_to image_tag("/assets/titanic.png"), gift1_index_path %>
-        
-      </div>
-       <div class="col-md-4 col-sm-6">
-        <%= link_to image_tag("/assets/titanic.png"), gift2_index_path %>
-      </div>
-       <div class="col-md-4 col-sm-6">
-        <%= link_to image_tag("/assets/titanic.png"), gift3_index_path  %>
-      </div>
-      <div>
-        
 
+       <div class="col-lg-4">
+          <div class="hovereffect">
+            <img class="img-responsive2"  src="/assets/gift1business.jpg" alt="">
+
+            <div class="overlay">
+              <h2><%= link_to "OPTION # 1", gift2_index_path %></h2>
+              <h2><%= link_to "THE BUSINESS BRAINS", gift2_index_path %></h2>
+              <p> 
+                <%= link_to "CLICK HERE", gift1_index_path %>
+              </p> 
+            </div>
+          </div>
       </div>
-  </div>
+      <div class="col-lg-4">
+          <div class="hovereffect">
+            <img class="img-responsive2"  src="/assets/gift2facebook.jpg" alt="">
+            <div class="overlay">
+              <h2><%= link_to "OPTION # 2", gift2_index_path %></h2>
+              <h2><%= link_to "FACEBOOK APPS SECRETS", gift2_index_path %></h2>
+              <p> 
+                <%= link_to "CLICK HERE", gift2_index_path %>
+              </p> 
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-4">
+          <div class="hovereffect">
+            <img class="img-responsive2"  src="/assets/gift3dating.jpg" alt="">
+            <div class="overlay">
+              <h2><%= link_to "OPTION # 1", gift3_index_path %></h2>
+              <h2><%= link_to "SUPER DATING SECRETS", gift3_index_path %></h2>
+              <p> 
+                <%= link_to "CLICK HERE", gift3_index_path %>
+              </p> 
+            </div>
+          </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
       
       <div>
         <h4>Note: You can only recive one free product, once you download one of the three you will be registered in our system. But more free products are ported monthly!</h4>
