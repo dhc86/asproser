@@ -40,35 +40,21 @@
 
 
 <div class="container">
-
-
-    <h1 class="text-center title text-center page-header"> Download free courses! </h1>
+  <h1 class="text-center title text-center page-header"> Download free courses! </h1>
      
 
   <div class="row">
-  <!--   <div class="col-md-6">
-
+    <div class="col-lg-6">
+      <div class="hovereffect">
       <img class="img-responsive" src="assets/free-gifts.jpg" alt="">
-    </div> -->
-
-      <div class="col-lg-6">
-        <div class="hovereffect">
-        <img class="img-responsive" src="assets/free-gifts.jpg" alt="">
-          <div class="overlay">
-            <h2 ><%= link_to "FREE GIFT OPTIONS", freeproducts_path%></h2>
-            <p> 
-              <a href="/freeproducts">CLICK HERE</a>
-            </p> 
-          </div>
+        <div class="overlay">
+          <h2 ><%= link_to "FREE GIFT OPTIONS", freeproducts_path%></h2>
+          <p> 
+            <a href="/freeproducts">CLICK HERE</a>
+          </p> 
         </div>
       </div>
-
-
-
-
-
-
-
+    </div>
 
     <div class="col-md-6">
         <h2>About S<font color="#F3B020">Ⓞ</font>L<font color="#F3B020">Ⓞ</font> SH<font color="#F3B020">Ⓞ</font>PPERS</h2>
@@ -78,33 +64,26 @@
         <h2>Newsletter</h2>        
         <p>There are 3 main gifts you can select from, click on the image to see the special products we have to offer <font color="#F3B020">(free of charge!)</font>.</p>
          <p>By downloading a free gift you will automatically get (free of charge) Subscription to our weekly Newsletter to stay tuned to the latest products.</p>
-               
-       
-        <div class="input-prepend">
+         
+        <div class="input-prepend text-center">
           <a href="/freeproducts"><input type="submit" value="Wiew my free gifts" class="btn btn-lg btn-warning text-center"/></a>
         </div>
-      
     </div>
   </div>
 
-<br>
+  <br>
 
-  
   <% if @categories.count == 0 %>
     <p>There are no Categories to display. Please enter a new category!</p>
     <%= link_to "Add Category", new_category_path %>
-
   <% else %>
-
-
-  <div class="row">
-    <div class="col-lg-12">
-        <h1  class="text-center title text-center page-header">Portfolio Categories</h1>
-        <br>
-    </div>
+    <div class="row">
+      <div class="col-lg-12">
+          <h1  class="text-center title text-center page-header">Portfolio Categories</h1>
+          <br>
+      </div>
       <% @categories.each do |category|  %>
-
-       <div class="col-lg-4">
+        <div class="col-lg-4">
           <div class="hovereffect">
               <%= image_tag category.category_image.url(:category_index), class: "img-responsive2"%>
             <div class="overlay">
@@ -114,77 +93,83 @@
               </p> 
             </div>
           </div>
-      </div>
-    <% end  %>
+        </div>
+      <% end  %>
+    </div>
   <% end %>
-
-  </div>
 </div>
 
 <br>
 
-
-          <div class="recommended_items"><!--recommended_items-->
-            <div>
-            <h2 class="title text-center page-header" >Most Popular Products</h2>
-            <h3 class="title text-center"><%= link_to "View all products", products_path, {:style=>'color: #F3B020;'} %></h3>
-            </div>
-            <br>
-            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="item active"> 
-
-
-
-                <% @products.each do |product|%>
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          
-                          <%= image_tag product.product_image.url(:product_index), class: "img-responsive2"%>
-                           <h2><%= link_to  product.title , "http://#{product.url}", {:style=>'color: #F3B020;'} %></h2>
-                        </div>
-                        
-                      </div>
-                    </div>
+<div class="container">
+<div class="recommended_items"><!--recommended_items-->
+  <div>
+    <h2 class="title text-center page-header" >Most Popular Products</h2>
+       
+      <br>
+    <div>
+ 
+      <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="item active"> 
+            <% @products.each do |product|%>
+              <div class="col-lg-4">
+                <div class="hovereffect">
+                    <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
+                  <div class="overlay">
+                    <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
+                    <p> 
+                      <a href="<%= product.url %>">CLICK HERE</a>
+                    </p> 
+                     <p>
+                    <% if user_signed_in? %>
+                      <% if @products.first.user_id == current_user.id %>
+                        <%= link_to "edit Product", edit_product_path(product) %>
+                        <p><%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete?"}%></p>
+                      <% end %>
+                    <% end %>
+                  </p> 
                   </div>
-                <% end %>
-
-
-
-
-                </div>
-
-
-                <div class="item">  
-                   <% @products.each do |product|%>
-                  <div class="col-sm-4">
-                    <div class="product-image-wrapper">
-                      <div class="single-products">
-                        <div class="productinfo text-center">
-                          <%= image_tag product.product_image.url(:product_index), class: "img-responsive2"%>
-                           <h2><%= link_to  product.title , "http://#{product.url}", {:style=>'color: #F3B020;'} %></h2>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-                <% end %>
-
-
-
-
-             
                 </div>
               </div>
-               <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-                </a>      
-            </div>
-          </div><!--/recommended_items-->
-
-          <br>
+            <% end %>
+          </div>
+          <div class="item">  
+            <% @products.each do |product|%>
+              <div class="col-lg-4">
+                <div class="hovereffect">
+                    <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
+                  <div class="overlay">
+                    <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
+                    <p> 
+                      <a href="#{product.url}">CLICK HERE</a>
+                    </p> 
+                     <p>
+                    <% if user_signed_in? %>
+                      <% if @products.first.user_id == current_user.id %>
+                        <%= link_to "edit Product", edit_product_path(product) %>
+                        <p><%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete?"}%></p>
+                      <% end %>
+                    <% end %>
+                  </p> 
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+        </a>      
+      </div>
+    </div><!--/recommended_items-->
+     <div class="col-md-12 text-center" id="view-all-products-button"> 
+          <a href="/products" class="btn btn-lg btn-warning" role="button">View all products</a>
+        </div>
+  </div>
+</div>
+<br>
+</div>

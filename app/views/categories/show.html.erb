@@ -1,15 +1,17 @@
 <div class="container">
   
-  <h1 class="text-center title text-center page-header"><%= @category.name %></h1>  
+  <h1 class="text-center title text-center page-header"><%= @category.name %>  
 
   <% if user_signed_in? %>
     <% if @category.user_id == current_user.id %>
       <p>Delete or Edit category:</p>
       <%= link_to "Edit", edit_category_path(@category) %>
       <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure you want to delete?"}   %>
+    <br>
     <% end %>
     <br>
   <% end %>
+  </h1>
 
   <% if @products.count == 0 %>
     <p>There are no Products to display. Please enter a new Product!</p>
