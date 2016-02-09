@@ -18,7 +18,6 @@ gem 'rails', '4.2.4'
 # end 
 
 # group :development do 
-  gem 'sqlite3'
 # end 
 
 # Use SCSS for stylesheets
@@ -61,3 +60,11 @@ group :development do
   gem 'spring'
 end
 
+group :development do 
+  gem 'sqlite3'
+end 
+
+group :production do 
+  gem 'pg'
+  gem 'rails_12factor'
+end 
