@@ -1,14 +1,8 @@
 <div class="container">
 
 <% if user_signed_in? %>
-    <% if @products.first.user_id == current_user.id %>
-
       <%= link_to "Add Product", new_product_path %>
-     
-    <% end %>
-  <% end %>
-
-
+<% end %>
 
   <h1 class="text-center title text-center page-header">Products</h1>
   <% if @products.count == 0 %>
