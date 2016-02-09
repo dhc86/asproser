@@ -22,7 +22,7 @@
             <div class="overlay">
               <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
               <p> 
-                <a href="http://#{product.url}">CLICK HERE</a>
+                <%= link_to "CLICK HERE", (product.url)%> 
               </p>
               <p>
                 <% if user_signed_in? %>
