@@ -18,11 +18,11 @@
   <% @products.each do |product|  %>
       <div class="col-lg-4">
           <div class="hovereffect">
-              <%= image_tag product.product_image.url(:product_index), class: "img-responsive2"%>
+              <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
             <div class="overlay">
-              <h2><%= product.title %></h2>
+              <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
               <p> 
-                <a href="#"%>CLICK HERE</a>
+                <a href="http://#{product.url}">CLICK HERE</a>
               </p>
               <p>
                 <% if user_signed_in? %>
