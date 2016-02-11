@@ -118,6 +118,7 @@
                     <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
                   <div class="overlay">
                     <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
+                    <h1><%= link_to  product.description , "#{product.url}", {:style=>'color: white;'} %></h1>
                     <p> 
                       <%= link_to "CLICK HERE", (product.url)%> 
                     </p> 
@@ -141,6 +142,7 @@
                     <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
                   <div class="overlay">
                     <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
+                    <h1><%= link_to  product.description , "#{product.url}", {:style=>'color: white;'} %></h1>
                     <p>
                       <%= link_to "CLICK HERE", (product.url)%> 
                     </p> 
