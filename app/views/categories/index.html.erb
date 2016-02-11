@@ -113,50 +113,54 @@
         <div class="carousel-inner">
           <div class="item active"> 
             <% @products.each do |product|%>
-              <div class="col-lg-4">
-                <div class="hovereffect">
-                    <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
-                  <div class="overlay">
-                    <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
-                    <h1><%= link_to  product.description , "#{product.url}", {:style=>'color: white;'} %></h1>
-                    <p> 
-                      <%= link_to "CLICK HERE", (product.url)%> 
-                    </p> 
-                     <p>
-                    <% if user_signed_in? %>
-                      <% if @products.first.user_id == current_user.id %>
-                        <%= link_to "edit Product", edit_product_path(product) %>
-                        <p><%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete?"}%></p>
+              <% if product.category_id == 1 || product.category_id == 4%>
+                <div class="col-lg-4">
+                  <div class="hovereffect">
+                      <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
+                    <div class="overlay">
+                      <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
+                      <h1><%= link_to  product.description , "#{product.url}", {:style=>'color: white;'} %></h1>
+                      <p> 
+                        <%= link_to "CLICK HERE", (product.url)%> 
+                      </p> 
+                       <p>
+                      <% if user_signed_in? %>
+                        <% if @products.first.user_id == current_user.id %>
+                          <%= link_to "edit Product", edit_product_path(product) %>
+                          <p><%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete?"}%></p>
+                        <% end %>
                       <% end %>
-                    <% end %>
-                  </p> 
+                    </p> 
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
           <div class="item">  
             <% @products.each do |product|%>
-              <div class="col-lg-4">
-                <div class="hovereffect">
-                    <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
-                  <div class="overlay">
-                    <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
-                    <h1><%= link_to  product.description , "#{product.url}", {:style=>'color: white;'} %></h1>
-                    <p>
-                      <%= link_to "CLICK HERE", (product.url)%> 
-                    </p> 
-                     <p>
-                    <% if user_signed_in? %>
-                      <% if @products.first.user_id == current_user.id %>
-                        <%= link_to "edit Product", edit_product_path(product) %>
-                        <p><%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete?"}%></p>
+              <% if product.category_id == 2 || product.category_id == 8%>
+                <div class="col-lg-4">
+                  <div class="hovereffect">
+                      <img src="<%= product.product_image %>" alt="#{product.url}" class="img-responsive2">
+                    <div class="overlay">
+                      <h2><%= link_to  product.title , "#{product.url}", {:style=>'color: white;'} %></h2>
+                      <h1><%= link_to  product.description , "#{product.url}", {:style=>'color: white;'} %></h1>
+                      <p>
+                        <%= link_to "CLICK HERE", (product.url)%> 
+                      </p> 
+                       <p>
+                      <% if user_signed_in? %>
+                        <% if @products.first.user_id == current_user.id %>
+                          <%= link_to "edit Product", edit_product_path(product) %>
+                          <p><%= link_to "Delete", product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete?"}%></p>
+                        <% end %>
                       <% end %>
-                    <% end %>
-                  </p> 
+                    </p> 
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
         </div>
