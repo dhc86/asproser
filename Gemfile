@@ -6,7 +6,7 @@ gem 'devise', '~> 3.5', '>= 3.5.5'
 gem 'pry'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'high_voltage', '~> 2.4.0'
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '< 2.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
