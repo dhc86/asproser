@@ -38,15 +38,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
-  # config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   #the keys are already set on heroku environment
-  #   :s3_credentials => {
-  #     :bucket => ENV['soloshoppers'],
-  #     :access_key_id => ENV['AKIAI6HRWTUVU2ZRXZIQ'],
-  #     :secret_access_key => ENV['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']
-  #   }
-  
-
-  end
+end
